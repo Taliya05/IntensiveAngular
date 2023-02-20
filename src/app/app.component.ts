@@ -25,7 +25,7 @@ export class AppComponent {
 
 
   ngOnInit() {
-    this.appService.getData().subscribe(carsData => this.carsData = carsData);
+    this.appService.getData(this.category).subscribe(carsData => this.carsData = carsData);
   }
 
 
@@ -36,6 +36,19 @@ export class AppComponent {
       this.priceForm.patchValue({car: car.name});
     }
   }
+
+
+
+
+
+  category: string = 'sport';
+  toggleCategory(category: string) {
+    this.category = category;
+    this.ngOnInit();
+  }
+
+
+
 
   trans: any;
   @HostListener('document:mousemove', ['$event'])
@@ -48,6 +61,13 @@ export class AppComponent {
   onScroll() {
     this.bgPos = {backgroundPositionX: '0' + (0.3 * window.scrollY) + 'px'};
   }
+
+
+
+
+
+
+
 
   onSubmit() {
     if (this.priceForm.valid) {

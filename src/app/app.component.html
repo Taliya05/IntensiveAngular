@@ -2,7 +2,7 @@
 <header class="header">
   <div class="container">
     <div class="logo">
-      <img src="../assets/images/logo.png" alt="logo">
+      <img src="assets/images/logo.png" alt="logo">
     </div>
     <nav class="menu">
       <ul>
@@ -41,6 +41,10 @@
 <section class="car" id="cars" #cars>
   <div class="container">
     <h2 class="sub-title">Наш автопарк</h2>
+    <div class="car-toggle">
+      <div [ngClass]="{active: category === 'sport'}" (click)="toggleCategory('sport')">Sport</div>
+      <div [ngClass]="{active: category === 'luxury'}" (click)="toggleCategory('luxury')">Luxury</div>
+    </div>
 
 
     <div class="car-items">
@@ -52,17 +56,17 @@
         <div class="car-item-title">{{car.name}}</div>
         <div class="car-item-info">
           <div class="car-item-point">
-            <img src="../assets/images/gear.png" alt="Gear">
+            <img src="assets/images/gear.png" alt="Gear">
             <div>Привод</div>
             <div>{{car.gear}}</div>
           </div>
           <div class="car-item-point">
-            <img src="../assets/images/wheel.png" alt="Wheel">
+            <img src="assets/images/wheel.png" alt="Wheel">
             <div>Двигатель</div>
             <div>{{car.engine}} л.с.</div>
           </div>
           <div class="car-item-point">
-            <img src="../assets/images/belt.png" alt="Belt">
+            <img src="assets/images/belt.png" alt="Belt">
             <div>Кол-во мест</div>
             <div>{{car.places}}</div>
           </div>
@@ -93,14 +97,14 @@
       <input type="text" class="price-input" id="car" placeholder="Автомобиль, который вас интересует" formControlName="car">
       <button type="submit" class="button" id="price-action" (click)="onSubmit()" [disabled]="!priceForm.valid">Узнать цену</button>
     </form>
-    <img src="../assets/images/rolls.png" alt="Rolls" class="price-image" [ngStyle]="trans">>
+    <img src="assets/images/rolls.png" alt="Rolls" class="price-image" [ngStyle]="trans">>
   </div>
 </section>
 
 <footer class="footer">
   <div class="container">
     <div class="logo">
-      <img src="../assets/images/logo.png" alt="logo">
+      <img src="assets/images/logo.png" alt="logo">
     </div>
     <div class="rights">Все права защищены</div>
   </div>
